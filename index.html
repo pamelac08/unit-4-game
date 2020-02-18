@@ -13,7 +13,6 @@
 </head>
 <body>
   
-  <!-- As a heading -->
   <nav class="navbar navbar-light bg-light">
     <span class="navbar-brand mb-0 h1">Crystals Collector!</span>
   </nav>
@@ -21,54 +20,40 @@
   <div class="card">
     <div class="card-body">
      Directions:
-     <br>
-     You will be given a random number at the start of the game. 
-     <br>
-     There are four crystals below. By clicking on a crystal, you will add a specific amount of point to your total score.
-     <br>
-     You win the game by matching your total score to the randomly generated number.  You lose the game if your total score goes above the random number.
-     <br>
-     The value of each crystal is hidden from you until you click on it.
-     <br>
-     Each time when the game starts, the game will change the values of each crystal.
-
+     <ul>
+        <li>You will be given a random number at the start of the game.</li>
+        <li>There are four crystals below. By clicking on a crystal, you will add a specific amount of point to your total score.</li>
+        <li>You win the game by matching your total score to the randomly generated number.  You lose the game if your total score goes above the random number.</li>
+        <li>The value of each crystal is hidden from you until you click on it.</li>
+        <li>Each time when the game starts, the game will change the values of each crystal.</li>
+    </ul>
     </div>
   </div>
-
-
 
 
   <div class="container">
-    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
     <div class="row">
       <div class="col-md-6" id="computer-random">Computer's Random Choice</div>
-      <div class="col-6 col-md-2" id="declaration"></div>
       <div class="col-6 col-md-3">
-        
-        <div id="row2">wins: </div>
-        <div id="row3">losses: </div>
-          <!-- need to create 3 subrows -->
-    </div>
+          <div id="row2">wins: </div>
+          <div id="row3">losses: </div>
+      </div>
+      <div class="col-6 col-md-2" id="declaration">test</div>
     </div>
   
-    <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
     <div class="row" id="buttons">
-      <button class="col-6 col-md-2" id="button1"><img src="assets/images/red_heart.jpeg"></button>
-      <button class="col-6 col-md-2" id="button2"><img src="assets/images/purple-crystal.jpeg"></button>
-      <button class="col-6 col-md-2" id="button3"><img src="assets/images/clear_heart.jpeg"></button>
-      <button class="col-6 col-md-2" id="button4"><img src="assets/images/heart_crystal.jpeg"></button>
+      <button class="col-6 col-md-2" id="button1"></button>
+      <button class="col-6 col-md-2" id="button2"></button>
+      <button class="col-6 col-md-2" id="button3"></button>
+      <button class="col-6 col-md-2" id="button4"></button>
     </div>
   
-    <!-- Columns are always 50% wide, on mobile and desktop -->
     <div class="row">
       <div class="col-6 col-md-6" id="user-guess">User Guess</div>
-      
     </div>
   </div>
 
 
-
-    
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script  type="text/javascript" src="assets/javascript/game.js"></script>
 

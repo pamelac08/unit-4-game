@@ -1,3 +1,4 @@
+$(document).ready(function() {
 
 // create variables for computer to choose from 
 
@@ -11,25 +12,20 @@ var computerChoices = [];
 computerRandom = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 console.log(computerRandom);
 
-    
 
 //randomly assign a number 1-12 to each button
 var buttonValues = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
 
- button1Value = buttonValues[Math.floor(Math.random() * buttonValues.length)];
-console.log(button1Value);
+button1Value = buttonValues[Math.floor(Math.random() * buttonValues.length)];
+    console.log(button1Value);
+button2Value = buttonValues[Math.floor(Math.random() * buttonValues.length)];
+    console.log(button2Value);
+button3Value = buttonValues[Math.floor(Math.random() * buttonValues.length)];
+    console.log(button3Value);
+button4Value = buttonValues[Math.floor(Math.random() * buttonValues.length)];
+    console.log(button4Value);
 
- button2Value = buttonValues[Math.floor(Math.random() * buttonValues.length)];
-console.log(button2Value);
-
- button3Value = buttonValues[Math.floor(Math.random() * buttonValues.length)];
-console.log(button3Value);
-
- button4Value = buttonValues[Math.floor(Math.random() * buttonValues.length)];
-console.log(button4Value);
-
-
-    }
+}
 
 computerSelect ();
 
@@ -38,41 +34,27 @@ var losses = 0;
 var userInputAdd = [];
 
 
+//pushing values to display on page 
+$("#computer-random").text(computerRandom);
+$("#declaration").text("test");
+$("#row2").text("Wins: " + wins);
+$("#row3").text("Losses: " + losses);
+$("#user-guess").text("Your total score is: " + userInputAdd);
 
-//pushing value to display on page
-var computerRandomDisplay = document.getElementById("computer-random");
-var button1valueDisplay = document.getElementById("button1");
-var button2valueDisplay = document.getElementById("button2");
-var button3valueDisplay = document.getElementById("button3");
-var button4valueDisplay = document.getElementById("button4");
-var declarationWinLose = document.getElementById("declaration");
-var winsDisplay = document.getElementById("row2");
-var lossesDisplay = document.getElementById("row3");
-var userInputAddDisplay = document.getElementById("user-guess")
-
-computerRandomDisplay.textContent = computerRandom;
-// button1valueDisplay.textContent = button1Value;
-// button2valueDisplay.textContent = button2Value;
-// button3valueDisplay.textContent = button3Value;
-// button4valueDisplay.textContent = button4Value;
-winsDisplay.textContent = "Wins: " + wins;
-lossesDisplay.textContent = "Losses: " + losses;
-userInputAddDisplay.textContent = "Your total score is: " + userInputAdd;
+//to display the image on the button
+$("#button1").prepend('<img id="button1image" src="assets/images/red_heart.jpeg"/>')
+$("#button2").prepend('<img id="button1image" src="assets/images/purple-crystal.jpeg"/>')
+$("#button3").prepend('<img id="button1image" src="assets/images/clear_heart.jpeg"/>')
+$("#button4").prepend('<img id="button1image" src="assets/images/heart_crystal.jpeg"/>')
 
 
 function reset() {
     userInputAdd = [];
     computerRandom = [];
     computerSelect();
-    computerRandomDisplay.textContent = computerRandom;
-    // button1valueDisplay.textContent = button1Value;
-    // button2valueDisplay.textContent = button2Value;
-    // button3valueDisplay.textContent = button3Value;
-    // button4valueDisplay.textContent = button4Value;
-    userInputAddDisplay.textContent = "Your total score is: " + userInputAdd;
-    
+    $("#computer-random").text(computerRandom);
+    $("#user-guess").text("Your total score is: " + userInputAdd);
 }
-
 
 
 
@@ -80,57 +62,54 @@ function reset() {
 //capture value of button
 //add the value to the user score
 
-
 $("#button1").on("click", function() {
 
-    declarationWinLose.textContent = " ";
+    $("#declaration").text(" ");
 
     button1Value = parseInt(button1Value);
     userInputAdd = Number(userInputAdd) + Number(button1Value);
-
     console.log(userInputAdd);
-    console.log(userInputAddDisplay);
-    userInputAddDisplay.textContent = "Your total score is: " + userInputAdd;
 
+    $("#user-guess").text("Your total score is: " + userInputAdd);
     checkScore();
 })
+
 $("#button2").on("click", function() {
 
-    declarationWinLose.textContent = " ";
+    $("#declaration").text(" ");
 
     button2Value = parseInt(button2Value);
     userInputAdd = Number(userInputAdd) + Number(button2Value);
 
     console.log(userInputAdd);
-    console.log(userInputAddDisplay);
-    userInputAddDisplay.textContent = "Your total score is: " + userInputAdd;
-
+    
+    $("#user-guess").text("Your total score is: " + userInputAdd);
     checkScore();
 })
+
 $("#button3").on("click", function() {
 
-    declarationWinLose.textContent = " ";
+    $("#declaration").text(" ");
 
     button3Value = parseInt(button3Value);
     userInputAdd = Number(userInputAdd) + Number(button3Value);
 
     console.log(userInputAdd);
-    console.log(userInputAddDisplay);
-    userInputAddDisplay.textContent = "Your total score is: " + userInputAdd;
-
+    
+    $("#user-guess").text("Your total score is: " + userInputAdd);
     checkScore();
 })
+
 $("#button4").on("click", function() {
 
-    declarationWinLose.textContent = " ";
+    $("#declaration").text(" ");
 
     button4Value = parseInt(button4Value);
     userInputAdd = Number(userInputAdd) + Number(button4Value);
 
     console.log(userInputAdd);
-    console.log(userInputAddDisplay);
-    userInputAddDisplay.textContent = "Your total score is: " + userInputAdd;
 
+    $("#user-guess").text("Your total score is: " + userInputAdd);
     checkScore();
 })
 
@@ -141,27 +120,18 @@ function checkScore() {
 if (userInputAdd == computerRandom) {
     wins++;
     reset();
-    declarationWinLose.textContent = "You Won!!";
-    winsDisplay.textContent = "Wins: " + wins;
-
-}
+    $("#declaration").text("You Won!");
+    $("#row2").text("Wins: " + wins);
+    }
 else if (userInputAdd > computerRandom ) {
     losses++;
     reset();
-    declarationWinLose.textContent = "You lost :(";
-    lossesDisplay.textContent = "Losses: " + losses;
+    $("#declaration").text("You Lost :(");
+    $("#row3").text("Losses: " + losses);
+    }
 }
 
-}
-
-
-
-
-
-
-
-
-
+})
 
 
 
