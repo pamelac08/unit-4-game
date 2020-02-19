@@ -35,25 +35,25 @@ var userInputAdd = [];
 
 
 //pushing values to display on page 
-$("#computer-random").text(computerRandom);
+$("#target-score").text(computerRandom);
 $("#declaration").text("test");
-$("#row2").text("Wins: " + wins);
-$("#row3").text("Losses: " + losses);
-$("#user-guess").text("Your total score is: " + userInputAdd);
+$("#wins").text(wins);
+$("#losses").text(losses);
+$("#user-score").text("" + userInputAdd);
 
 //to display the image on the button
-$("#button1").prepend('<img id="button1image" src="assets/images/red_heart.jpeg"/>')
-$("#button2").prepend('<img id="button1image" src="assets/images/purple-crystal.jpeg"/>')
-$("#button3").prepend('<img id="button1image" src="assets/images/clear_heart.jpeg"/>')
-$("#button4").prepend('<img id="button1image" src="assets/images/heart_crystal.jpeg"/>')
+$("#crystal-images").append('<button><img id="button1image" src="assets/images/red_heart.jpeg"/></button>')
+$("#crystal-images").append('<button><img id="button2image" src="assets/images/purple-crystal.jpeg"/></button>')
+$("#crystal-images").append('<button><img id="button3image" src="assets/images/clear_heart.jpeg"/></button>')
+$("#crystal-images").append('<button><img id="button4image" src="assets/images/heart_crystal.jpeg"/></button>')
 
 
 function reset() {
     userInputAdd = [];
     computerRandom = [];
     computerSelect();
-    $("#computer-random").text(computerRandom);
-    $("#user-guess").text("Your total score is: " + userInputAdd);
+    $("#target-score").text(computerRandom);
+    $("#user-score").text(userInputAdd);
 }
 
 
@@ -62,7 +62,7 @@ function reset() {
 //capture value of button
 //add the value to the user score
 
-$("#button1").on("click", function() {
+$("#button1image").on("click", function() {
 
     $("#declaration").text(" ");
 
@@ -70,11 +70,11 @@ $("#button1").on("click", function() {
     userInputAdd = Number(userInputAdd) + Number(button1Value);
     console.log(userInputAdd);
 
-    $("#user-guess").text("Your total score is: " + userInputAdd);
+    $("#user-score").text(userInputAdd);
     checkScore();
 })
 
-$("#button2").on("click", function() {
+$("#button2image").on("click", function() {
 
     $("#declaration").text(" ");
 
@@ -83,11 +83,11 @@ $("#button2").on("click", function() {
 
     console.log(userInputAdd);
     
-    $("#user-guess").text("Your total score is: " + userInputAdd);
+    $("#user-score").text(userInputAdd);
     checkScore();
 })
 
-$("#button3").on("click", function() {
+$("#button3image").on("click", function() {
 
     $("#declaration").text(" ");
 
@@ -96,11 +96,11 @@ $("#button3").on("click", function() {
 
     console.log(userInputAdd);
     
-    $("#user-guess").text("Your total score is: " + userInputAdd);
+    $("#user-score").text(userInputAdd);
     checkScore();
 })
 
-$("#button4").on("click", function() {
+$("#button4image").on("click", function() {
 
     $("#declaration").text(" ");
 
@@ -109,7 +109,7 @@ $("#button4").on("click", function() {
 
     console.log(userInputAdd);
 
-    $("#user-guess").text("Your total score is: " + userInputAdd);
+    $("#user-score").text(userInputAdd);
     checkScore();
 })
 
@@ -121,13 +121,13 @@ if (userInputAdd == computerRandom) {
     wins++;
     reset();
     $("#declaration").text("You Won!");
-    $("#row2").text("Wins: " + wins);
+    $("#wins").text(wins);
     }
 else if (userInputAdd > computerRandom ) {
     losses++;
     reset();
     $("#declaration").text("You Lost :(");
-    $("#row3").text("Losses: " + losses);
+    $("#losses").text(losses);
     }
 }
 
