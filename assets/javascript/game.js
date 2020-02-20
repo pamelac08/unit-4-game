@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+
+$("#wins-box, #losses-box, #target-score-box, #user-score-box").css("max-width","48%");
+
 // create variables for computer to choose from 
 
 function computerSelect() {
@@ -39,7 +42,7 @@ $("#target-score").text(computerRandom);
 $("#declaration").text("test");
 $("#wins").text(wins);
 $("#losses").text(losses);
-$("#user-score").text("" + userInputAdd);
+$("#user-score").text("0");
 
 //to display the image on the button
 $("#crystal-images").append('<button><img id="button1image" src="assets/images/red_heart.jpeg"/></button>')
@@ -53,7 +56,7 @@ function reset() {
     computerRandom = [];
     computerSelect();
     $("#target-score").text(computerRandom);
-    $("#user-score").text(userInputAdd);
+    $("#user-score").text("0");
 }
 
 
