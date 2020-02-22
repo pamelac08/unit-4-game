@@ -4,7 +4,6 @@ $(document).ready(function() {
 $("#wins-box, #losses-box, #target-score-box, #user-score-box").css("max-width","48%");
 
 // create variables for computer to choose from 
-
 function computerSelect() {
 var computerChoices = [];
         for (i=19; i<121; i++){
@@ -27,19 +26,19 @@ button3Value = buttonValues[Math.floor(Math.random() * buttonValues.length)];
     console.log(button3Value);
 button4Value = buttonValues[Math.floor(Math.random() * buttonValues.length)];
     console.log(button4Value);
-
 }
 
 computerSelect ();
 
 var wins = 0;
 var losses = 0;
+//variable to add user score
 var userInputAdd = [];
 
 
 //pushing values to display on page 
 $("#target-score").text(computerRandom);
-$("#declaration").text("test");
+$("#declaration").text(" ");
 $("#wins").text(wins);
 $("#losses").text(losses);
 $("#user-score").text("0");
@@ -58,7 +57,6 @@ function reset() {
     $("#target-score").text(computerRandom);
     $("#user-score").text("0");
 }
-
 
 
 //on click event for button
@@ -123,13 +121,13 @@ function checkScore() {
 if (userInputAdd == computerRandom) {
     wins++;
     reset();
-    $("#declaration").text("You Won!");
+    $("#declaration").html("<img width=275px height=175px src='assets/images/yesgif.gif'/>");
     $("#wins").text(wins);
     }
 else if (userInputAdd > computerRandom ) {
     losses++;
     reset();
-    $("#declaration").text("You Lost :(");
+    $("#declaration").html("<img width=275px height=175px src='assets/images/nogif2.gif'/>");
     $("#losses").text(losses);
     }
 }

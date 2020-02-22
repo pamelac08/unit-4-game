@@ -13,19 +13,18 @@
 </head>
 <body>
   
-  <nav class="navbar navbar-light bg-light">
-    <span class="navbar-brand mb-0 h1">Crystals Collector!</span>
+  <nav class="navbar navbar-light bg-light">Crystals Collector!
   </nav>
 
   <div class="card">
     <div class="card-body">
-     <h3>Directions:</h3>
-     <ul>
-        <li>You will be given a random number at the start of the game.</li>
-        <li>There are four crystals below. By clicking on a crystal, you will add a specific amount of point to your total score.</li>
-        <li>You win the game by matching your total score to the randomly generated number.  You lose the game if your total score goes above the random number.</li>
+     <h3>How to Play:</h3>
+     <ul class="dashed">
+        <li>You will be given a random number at the start of the game - this is your target score.</li>
+        <li>There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score.</li>
+        <li>You win the game by matching your total score to the target score.  You lose the game if your total score goes above the target score.</li>
         <li>The value of each crystal is hidden from you until you click on it.</li>
-        <li>Each time when the game starts, the game will change the values of each crystal.</li>
+        <li>Each time the game restarts, the value of each crystal will change as well.</li>
     </ul>
     </div>
   </div>
@@ -45,16 +44,7 @@
     </div>
   </div>
 
-  <!-- <div class="col-6 col-md-2" id="declaration">test</div> -->
-
-  <div class="card border-light mb-3"  id="crystal-images-box">
-    <div class="card-header">Crystal Selector</div>
-    <div class="card-body">
-      <p class="card-text" id="crystal-images"></p>
-    </div>
-  </div>
-
-  <!-- <div class="col-6 col-md-2" id="declaration">test</div> -->
+  
 
   <div class="card border-light mb-3" style="max-width: 18rem;" id="wins-box">
     <div class="card-header">Wins</div>
@@ -69,6 +59,16 @@
       <p class="card-text" id="losses"></p>
     </div>
   </div>
+
+  <div class="card border-light mb-3"  id="crystal-images-box">
+    <div class="card-header">Crystal Selector</div>
+    <div class="card-body">
+      <p class="card-text" id="crystal-images"></p>
+    </div>
+  </div>
+
+  <div id="declaration"></div>
+  
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
